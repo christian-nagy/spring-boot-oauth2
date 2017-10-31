@@ -27,6 +27,13 @@ var AppComponent = ng.core.Component({
                 self.authenticated = false;
             });
         };
+        this.login = function () {
+            console.log("do the login");
+            var credentials = {grant_type: 'password', username: 'root', password: 'pass'};
+            http.post("login", credentials).subscribe(function (response) {
+                console.log("login:", response);
+            })
+        };
         this.authenticate();
     }]
 });
