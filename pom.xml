@@ -28,6 +28,7 @@
         <module>auth-server</module>
         <module>resource-server</module>
         <module>gateway</module>
+        <module>ui1</module>
     </modules>
 
     <dependencies>

@@ -1,17 +1,31 @@
+#
+#server:
+#  port: 9999
+#  contextPath: /uaa
+#
+#security:
+#  user:
+#    name: root
+#    password: pass
+#
+#security.oauth2.client:
+#  clientId: acme
+#  clientSecret: acmesecret
+#  authorized-grant-types: password,refresh_token #authorization_code,refresh_token,password
+#  scope: openid
+#
+#logging.level.org.springframework.security: DEBUG
 
 server:
   port: 9999
-  contextPath: /uaa
+  context-path: /uaa
 
 security:
-  user:
-    name: root
-    password: pass
+  sessions: if-required
 
-security.oauth2.client:
-  clientId: acme
-  clientSecret: acmesecret
-  authorized-grant-types: password,refresh_token #authorization_code,refresh_token,password
-  scope: openid
-
-logging.level.org.springframework.security: DEBUG
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432/auth-test-oauth"
+    username: postgres
+    password: optasports
+#    driver-class-name: net.sourceforge.jtds.jdbc.Driver
